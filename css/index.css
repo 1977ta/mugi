@@ -32,9 +32,13 @@ img{
 /* header */
 
 header{
-  background: lightgray;
   padding: 0 16px ;
+  position: fixed;
+  width: 100%;
+  transition: background .6s,boxshadow .6s;
+  z-index: 1;
 }
+
 
 header .container{
   display: flex;
@@ -45,7 +49,7 @@ header .container{
 
 /* hero */
 .hero{
-  padding-top: 64px ;
+  padding-top: 128px ;
   background-image: url(/img/20.jpg);
   background-position: center;
   background-size: cover;
@@ -186,4 +190,36 @@ header .container{
   .voice+ .voice{
     margin-top: 0;
   }
+  .animate.delay{
+    transition-delay: .3s;
+  }
+  .animate.delay-se{
+    transition-delay: .6s;
+  }
+  .animate.delay-th{
+    transition-delay: .9s;
+  }
+}
+
+
+
+/* js */
+.animate{
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity.6s,transform.6s;
+}
+.animate.left{
+  transform: translateX(-40px);
+}
+.animate.right{
+  transform: translateX(40px);
+}
+.animate.appear{
+  opacity: 1;
+  transform: none;
+}
+header.scrolled{
+  background: rgba(255, 255, 255, .95);
+  box-shadow: 0 0 4px rgba(0, 0, 0, .3);
 }
